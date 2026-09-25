@@ -1,0 +1,8 @@
+# Finds HTTP status codes in web-server access logs (nginx / Apache "combined" format)
+# and, thanks to the (?P<group>…) capture, gives you a Breakdown: requests per status.
+name        = "HTTP status codes"
+description = "Status codes in nginx / Apache access logs"
+pattern     = 'HTTP/[0-9.]+" (?P<group>[1-5][0-9]{2})'
+group_label = "Status"
+color       = "#c678dd"
+enabled     = false

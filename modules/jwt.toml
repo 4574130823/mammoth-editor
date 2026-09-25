@@ -1,0 +1,7 @@
+# Detects JSON Web Tokens (three base64url parts, header and payload start with "eyJ").
+name        = "JWT tokens"
+description = "JSON Web Tokens such as eyJhbGciOi…"
+pattern     = '''eyJ[A-Za-z0-9_-]{5,}\.eyJ[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]{10,}'''
+color       = "#e5c07b"
+replacement = "[JWT]"
+enabled     = false

@@ -1,0 +1,34 @@
+[package]
+name = "mammoth"
+version = "0.1.0"
+edition = "2024"
+description = "A fast, modular text editor for huge files (100 GB+), inspired by EmEditor"
+
+[dependencies]
+eframe = { version = "0.36.2", features = ["persistence"] }
+egui = "0.36.2"
+jaq-core = "3.1.1"
+jaq-json = "2.0.3"
+jaq-std = "3.0.3"
+memchr = "2.8.3"
+memmap2 = "0.9.11"
+regex = "1.13.1"
+rfd = "0.17.2"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.151", features = ["preserve_order", "arbitrary_precision"] }
+toml = "1.1.6"
+ttf-parser = "0.25"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+
+[dev-dependencies]
+egui_kittest = { version = "0.36", features = ["wgpu", "snapshot"] }
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+[build-dependencies]
+winresource = "0.1.31"

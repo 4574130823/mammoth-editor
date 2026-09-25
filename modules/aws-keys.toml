@@ -1,0 +1,7 @@
+# Detects AWS access key IDs. Handy for scanning logs and dumps for leaked credentials.
+name        = "AWS access keys"
+description = "AKIA… / ASIA… access key IDs"
+pattern     = '''(?-u:\b)(?:AKIA|ASIA)[0-9A-Z]{16}(?-u:\b)'''
+color       = "#ff7b72"
+replacement = "[AWS_KEY]"
+enabled     = false
